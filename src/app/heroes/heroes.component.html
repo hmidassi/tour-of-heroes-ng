@@ -1,4 +1,4 @@
 <h2>Détail héros: {{hero.name}}</h2>
-<div>id: <span>{{hero.id}}</span></div>
-<div>nom: <span>{{hero.name}}</span></div>
-<div>identité civile: <span>{{hero.trueName}}</span></div>
+<div>id: {{hero.id}}</div>
+<div><label>nom: <input [(ngModel)]="hero.name" placeholder="nom"></label></div>
+<div><label>identité civile: <input [(ngModel)]="hero.trueName" placeholder="identité civile"></label></div>
