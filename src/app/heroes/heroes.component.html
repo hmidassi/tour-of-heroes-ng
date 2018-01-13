@@ -1,4 +1,10 @@
-<h2>Détail héros: {{hero.name}}</h2>
-<div>id: {{hero.id}}</div>
-<div><label>nom: <input [(ngModel)]="hero.name" placeholder="nom"></label></div>
-<div><label>identité civile: <input [(ngModel)]="hero.trueName" placeholder="identité civile"></label></div>
+
+
+<h2>My Heroes</h2>
+<ul class="heroes">
+  <li *ngFor="let superhero of heroes" [class.selected]="superhero===selectedHero" (click)="onSelect(superhero)" >
+    <span class="badge">{{superhero.id}}</span> {{superhero.name}}
+  </li>
+</ul>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

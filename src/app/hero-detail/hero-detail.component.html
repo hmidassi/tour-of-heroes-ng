@@ -1,0 +1,6 @@
+<div *ngIf="hero">
+    <h2>Détail héros: {{hero.name}}</h2>
+    <div>id: {{hero.id}}</div>
+    <div><label>nom: <input [(ngModel)]="hero.name" placeholder="nom"></label></div>
+    <div><label>identité civile: <input [(ngModel)]="hero.trueName" placeholder="identité civile"></label></div>
+</div>
