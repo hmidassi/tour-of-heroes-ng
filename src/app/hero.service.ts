@@ -64,4 +64,13 @@ export class HeroService {
     )
   }
 
+  deleteHero(hero:Hero | number):Observable<Hero>{
+    const id = typeof(hero)==='number'?hero:hero.id;
+    const url = `${this.heroesUrl}/${id}`;
+    return this.httpClient.delete<Hero>(url,httpOptions).pipe(
+      tap(_=>this.log(`id héros effacé : ${id}`)),
+      catchError(this.handleError<Hero>('deleteHero'))
+    );
+  }
+
 }
